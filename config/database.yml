@@ -78,6 +78,13 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+staging:
+  <<: *default
+  database: galit-for-akim_staging
+  username: galit-for-akim
+  password: <%= ENV['GALIT-FOR-AKIM_DATABASE_PASSWORD'] %>
+
+
 production:
   <<: *default
   database: galit-for-akim_production
