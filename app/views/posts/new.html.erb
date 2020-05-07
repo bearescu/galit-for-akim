@@ -1,0 +1,10 @@
+<h3>New Post</h3>
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.input :section %>
+    <%= f.input :name %>
+    <%= f.input :description,
+        required: true,
+        # autofocus: true,
+        as: :text%>
+    <%= f.submit %>
+  <% end %>

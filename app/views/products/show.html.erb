@@ -1,0 +1,15 @@
+<h1>Product page</h1>
+  <p><%= link_to 'Back to produc list', products_path %></p>
+  <h3><%= @product.name %></h3>
+  <p><%= @product.price %></p>
+  <p><%= @product.description %></p>
+
+  <%= render './bookings/form' %>
+
+<%= simple_form_for(@product) do |f| %>
+      <%= f.input :quantity,
+                  required: true,
+                  # autofocus: true,
+                  as: :integer%>
+      <%= f.submit %>
+<% end %>

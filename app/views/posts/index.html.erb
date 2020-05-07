@@ -1,0 +1,18 @@
+<h1>POSTS</h1>
+
+<p><%= link_to 'New post', new_post_path %></p>
+
+<h2>ABOUT</h2>
+<% @posts.where(section: "ABOUT").each do |post| %>
+<h3><%= post.id %>. <%= link_to post.name, post_path(post) %></h3>
+    <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <p><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete #{post.name}?"} %></p>
+<% end %>
+
+<h2>HOME</h2>
+<% @posts.where(section: "HOME").each do |post| %>
+<h3><%= post.id %>.
+  <%= link_to post.name, post_path(post) %></h3>
+    <p><%= link_to 'Edit', edit_post_path(post) %></p>
+    <p><%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete #{post.name}?"} %></p>
+<% end %>
